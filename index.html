@@ -1,13 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patinhas — Adoção de Animais</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adota um Amigo — Encontra o teu companheiro</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">
+      <span class="logo-paw">✦</span> adota um amigo
+    </a>
+    <ul class="nav__links">
+      <li><a href="#animais">Animais</a></li>
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+    </ul>
+    <a href="#animais" class="btn btn--nav">Adotar →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__noise"></div>
+    <div class="hero__grid-bg"></div>
+
+    <div class="hero__left">
+      <div class="hero__tag">
+        <span class="tag-dot"></span>
+        Adoção Responsável · Portugal · Desde 2013
+      </div>
+      <h1 class="hero__title">
+        Todo animal<br>
+        <span class="hero__title-italic">merece um lar</span><br>
+        <span class="hero__title-outline">e amor.</span>
+      </h1>
+      <p class="hero__sub">Encontra o teu companheiro perfeito entre centenas de animais à espera de uma segunda oportunidade.</p>
+      <div class="hero__actions">
+        <a href="#animais" class="btn btn--primary">Ver Animais disponíveis</a>
+        <a href="#como-funciona" class="btn btn--text">Como funciona <span class="arrow">↓</span></a>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__featured-card">
+        <div class="featured-card__header">
+          <span class="featured-label">Em destaque</span>
+          <span class="featured-status">● Disponível</span>
+        </div>
+        <div class="featured-card__emoji-wrap">
+          <div class="featured-emoji-bg"></div>
+          <span class="featured-emoji">🐕</span>
+        </div>
+        <div class="featured-card__info">
+          <h3>Bolinha</h3>
+          <p>Labrador mix · 3 anos · Lisboa</p>
+        </div>
+        <div class="featured-card__tags">
+          <span>Castrado</span><span>Vacinado</span><span>Sociável</span>
+        </div>
+      </div>
+
+      <div class="hero__side-card">
+        <span class="side-emoji">🐱</span>
+        <div>
+          <strong>Luna</strong>
+          <span>Europeu · 1 ano</span>
+        </div>
+        <span class="side-badge">Porto</span>
+      </div>
+
+      <div class="hero__counter">
+        <div class="counter-inner">
+          <span class="counter-num">847</span>
+          <span class="counter-label">animais<br>adotados</span>
+        </div>
+      </div>
+
+      <div class="hero__ticker">
+        <span>🐾 Adoção gratuita</span>
+        <span>✦</span>
+        <span>🏥 Acompanhamento veterinário</span>
+        <span>✦</span>
+        <span>💛 12 anos de missão</span>
+        <span>✦</span>
+        <span>🐾 Adoção gratuita</span>
+        <span>✦</span>
+        <span>🏥 Acompanhamento veterinário</span>
+        <span>✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STATS -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>847 Adotados</span>
+      <span class="mx">✦</span>
+      <span>132 À Espera</span>
+      <span class="mx">✦</span>
+      <span>98% Satisfeitos</span>
+      <span class="mx">✦</span>
+      <span>12 Anos</span>
+      <span class="mx">✦</span>
+      <span>847 Adotados</span>
+      <span class="mx">✦</span>
+      <span>132 À Espera</span>
+      <span class="mx">✦</span>
+      <span>98% Satisfeitos</span>
+      <span class="mx">✦</span>
+      <span>12 Anos</span>
+      <span class="mx">✦</span>
+    </div>
+  </div>
+
+  <!-- ANIMAIS -->
+  <section class="animais" id="animais">
+    <div class="animais__header">
+      <div class="animais__header-left">
+        <span class="section-label">Os nossos amigos</span>
+        <h2 class="section-title">Conhece quem<br><em>precisa de ti</em></h2>
+      </div>
+      <div class="filter-pills">
+        <button class="pill pill--active" data-filter="todos">Todos</button>
+        <button class="pill" data-filter="cao">🐕 Cães</button>
+        <button class="pill" data-filter="gato">🐈 Gatos</button>
+        <button class="pill" data-filter="outro">🐾 Outros</button>
+      </div>
+    </div>
+
+    <div class="cards-grid" id="cards-grid">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona" id="como-funciona">
+    <div class="cf-noise"></div>
+    <div class="cf-inner">
+      <span class="section-label">O processo</span>
+      <h2 class="section-title center">Como adotar</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <div class="step__icon">🔍</div>
+          <h3>Escolhe</h3>
+          <p>Navega pelos perfis e encontra o animal com quem sentes uma ligação especial.</p>
+        </div>
+        <div class="step__connector">
+          <div class="connector-line"></div>
+          <span>→</span>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <div class="step__icon">📞</div>
+          <h3>Contacta</h3>
+          <p>Entra em contacto com o nosso abrigo para agendar uma visita presencial.</p>
+        </div>
+        <div class="step__connector">
+          <div class="connector-line"></div>
+          <span>→</span>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <div class="step__icon">🏡</div>
+          <h3>Adota</h3>
+          <p>Após processo de aprovação, leva o teu novo companheiro para casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="sobre__left">
+      <div class="sobre__img-box">
+        <div class="sobre__paw-bg">🐾</div>
+        <div class="sobre__float-badge sobre__float-badge--1">Amor incondicional 💛</div>
+        <div class="sobre__float-badge sobre__float-badge--2">✓ Adoção gratuita</div>
+      </div>
+    </div>
+    <div class="sobre__right">
+      <span class="section-label">A nossa missão</span>
+      <h2 class="section-title">Acreditamos que<br><em>todo amor conta.</em></h2>
+      <p>Somos uma organização sem fins lucrativos dedicada a dar uma segunda chance a animais abandonados ou maltratados. Cada adoção é um ato de amor que muda duas vidas — a do animal e a tua.</p>
+      <div class="sobre__stats">
+        <div class="sobre__stat">
+          <span class="sobre__stat-n">847</span>
+          <span class="sobre__stat-l">Animais Adotados</span>
+        </div>
+        <div class="sobre__stat">
+          <span class="sobre__stat-n">12</span>
+          <span class="sobre__stat-l">Anos de Missão</span>
+        </div>
+      </div>
+      <a href="mailto:adota@amigo.pt" class="btn btn--primary">Fala connosco →</a>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modal-close">✕</button>
+      <div class="modal__content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <span class="footer__logo">✦ adota um amigo</span>
+        <p>Feito com ❤️ para os animais de Portugal.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#animais">Animais</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#sobre">Sobre</a>
+        <a href="mailto:adota@amigo.pt">Contacto</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Adota um Amigo</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>
